@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlyonUI Components - Wakuku store</title>
+    <link rel="stylesheet" href="/static/css/tailwind.css">
+    <link rel="stylesheet" href="/static/css/flyonui.css">
+    <script src="/static/js/flyonui.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white text-black p-4 shadow-lg">
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center justify-between">
+            <!-- Left section: Logo and brand -->
+            <div class="flex items-center">
+                <img src="../static/images/nav_wakuku.png" class="h-[50px] mr-3" alt="Wakuku Logo"/>
+                <span class="font-bold text-2xl">WAKUKU</span>
+                <div class="mx-20"></div>
+                <button class="nav-button font-medium mx-4 text-lg hover:text-blue-600 transition-colors">WHAT'S NEW</button>
+                <button class="nav-button font-medium mx-4 text-lg hover:text-blue-600 transition-colors">SHOP</button>
+                <button class="nav-button font-medium mx-4 text-lg text-red-600 hover:text-blue-600 transition-colors">SALE</button>
+            </div>
+
+            <!-- Right section: Search and auth -->
+            <div class="flex items-center">
+                <!-- Search -->
+                <div class="relative mr-6">
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        class="w-64 pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    >
+                    <svg class="w-5 h-5 absolute left-3 top-2.5 text-gray-400"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- Auth buttons -->
+                <div class="flex">
+                    <button class="nav-button font-medium mx-2 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors">LOG IN</button>
+                    <button class="nav-button font-medium mx-2 px-4 py-2 rounded-lg bg-black text-white hover:bg-gray-800 transition-colors">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="md:hidden">
+            <div class="flex items-center justify-between">
+                <!-- Logo and brand -->
+                <div class="flex items-center">
+                    <img src="../static/images/nav_wakuku.png" class="h-[40px] mr-2" alt="Wakuku Logo"/>
+                    <span class="font-bold text-xl">WAKUKU</span>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-gray-100">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile menu (hidden by default) -->
+            <div id="mobile-menu" class="hidden mt-4">
+                <div class="flex flex-col space-y-2">
+                    <button class="nav-button font-medium py-2 text-lg hover:text-blue-600 transition-colors">WHAT'S NEW</button>
+                    <button class="nav-button font-medium py-2 text-lg hover:text-blue-600 transition-colors">SHOP</button>
+                    <button class="nav-button font-medium py-2 text-lg text-red-600 hover:text-blue-600 transition-colors">SALE</button>
+                </div>
+
+                <!-- Search -->
+                <div class="relative my-4">
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    >
+                    <svg class="w-5 h-5 absolute left-3 top-2.5 text-gray-400"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- Auth buttons -->
+                <div class="flex flex-col space-y-2">
+                    <button class="nav-button font-medium py-2 rounded-lg hover:bg-gray-100 transition-colors">LOG IN</button>
+                    <button class="nav-button font-medium py-2 rounded-lg bg-black text-white hover:bg-gray-800 transition-colors">SIGN UP</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content area with FlyonUI components -->
+    <div class="container mx-auto mt-12 p-4">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">FlyonUI Components</h1>
+            <a href="/" class="text-blue-600 hover:text-blue-800 underline">Back to Main Page</a>
+        </div>
+
+        <!-- FlyonUI Alert Components -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Alerts</h2>
+            <div class="flyon-alert flyon-alert-primary">
+                This is a primary alert with FlyonUI
+                <button class="float-right" data-flyon-dismiss="alert">&times;</button>
+            </div>
+            <div class="flyon-alert flyon-alert-success">
+                This is a success alert with FlyonUI
+                <button class="float-right" data-flyon-dismiss="alert">&times;</button>
+            </div>
+            <div class="flyon-alert flyon-alert-danger">
+                This is a danger alert with FlyonUI
+                <button class="float-right" data-flyon-dismiss="alert">&times;</button>
+            </div>
+            <div class="flyon-alert flyon-alert-warning">
+                This is a warning alert with FlyonUI
+                <button class="float-right" data-flyon-dismiss="alert">&times;</button>
+            </div>
+        </div>
+
+        <!-- FlyonUI Button Components -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Buttons</h2>
+            <div class="flex flex-wrap gap-2">
+                <button class="flyon-btn flyon-btn-primary">Primary Button</button>
+                <button class="flyon-btn flyon-btn-secondary">Secondary Button</button>
+                <button class="flyon-btn flyon-btn-success">Success Button</button>
+                <button class="flyon-btn flyon-btn-danger">Danger Button</button>
+            </div>
+        </div>
+
+        <!-- FlyonUI Card Components -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Cards</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flyon-card">
+                    <div class="flyon-card-header">
+                        <h3 class="font-bold">Card Title</h3>
+                    </div>
+                    <div class="flyon-card-body">
+                        <p>This is a basic card component from FlyonUI. Cards can be used to display content in a clean and organized way.</p>
+                    </div>
+                    <div class="flyon-card-footer">
+                        <button class="flyon-btn flyon-btn-primary">Action</button>
+                    </div>
+                </div>
+
+                <div class="flyon-card">
+                    <div class="flyon-card-header">
+                        <h3 class="font-bold">Feature Card</h3>
+                    </div>
+                    <div class="flyon-card-body">
+                        <p>FlyonUI provides a set of components that work well together and are easy to customize.</p>
+                    </div>
+                    <div class="flyon-card-footer">
+                        <button class="flyon-btn flyon-btn-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FlyonUI Form Components -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Form Elements</h2>
+            <div class="flyon-card">
+                <div class="flyon-card-body">
+                    <div class="mb-4">
+                        <label class="flyon-label" for="name">Name</label>
+                        <input type="text" id="name" class="flyon-input" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="flyon-label" for="email">Email</label>
+                        <input type="email" id="email" class="flyon-input" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label class="flyon-label" for="message">Message</label>
+                        <textarea id="message" class="flyon-input" rows="3" placeholder="Enter your message"></textarea>
+                    </div>
+                    <button class="flyon-btn flyon-btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- FlyonUI Badge Components -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Badges</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="flyon-badge flyon-badge-primary">Primary</span>
+                <span class="flyon-badge flyon-badge-success">Success</span>
+                <span class="flyon-badge flyon-badge-danger">Danger</span>
+                <span class="flyon-badge flyon-badge-warning">Warning</span>
+            </div>
+        </div>
+
+        <!-- FlyonUI Modal Component -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Modal</h2>
+            <button class="flyon-btn flyon-btn-primary" data-flyon-toggle="modal" data-flyon-target="#exampleModal">
+                Open Modal
+            </button>
+
+            <!-- Modal -->
+            <div id="exampleModal" class="flyon-modal hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+                <div class="flyon-card w-full max-w-md mx-4">
+                    <div class="flyon-card-header flex justify-between items-center">
+                        <h3 class="font-bold">Modal Title</h3>
+                        <button class="text-gray-500 hover:text-gray-700" data-flyon-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="flyon-card-body">
+                        <p>This is a modal component from FlyonUI. Modals can be used to display content that requires user interaction before continuing.</p>
+                    </div>
+                    <div class="flyon-card-footer flex justify-end">
+                        <button class="flyon-btn flyon-btn-secondary mr-2" data-flyon-dismiss="modal">Close</button>
+                        <button class="flyon-btn flyon-btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FlyonUI Tooltip Component -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Tooltips</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="flyon-btn flyon-btn-primary" data-flyon-tooltip="This is a tooltip">
+                    Hover me
+                </button>
+                <span class="flyon-badge flyon-badge-success" data-flyon-tooltip="Success badge tooltip">
+                    Badge with tooltip
+                </span>
+                <a href="#" class="text-blue-600 underline" data-flyon-tooltip="Link tooltip">
+                    Link with tooltip
+                </a>
+                <span class="inline-block" data-flyon-tooltip="Information tooltip">
+                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <!-- FlyonUI Dropdown Component -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Dropdowns</h2>
+            <div class="relative inline-block">
+                <button class="flyon-btn flyon-btn-primary" data-flyon-toggle="dropdown" data-flyon-target="#exampleDropdown">
+                    Dropdown Menu
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="exampleDropdown" class="flyon-dropdown-menu hidden absolute z-10 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div class="py-1">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Notifications</a>
+                        <div class="border-t border-gray-100"></div>
+                        <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FlyonUI Tabs Component -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Tabs</h2>
+            <div data-flyon-tabs>
+                <div class="border-b border-gray-200">
+                    <nav class="flex -mb-px">
+                        <button class="py-2 px-4 border-b-2 font-medium text-sm" data-flyon-tab="#tab1">
+                            Tab 1
+                        </button>
+                        <button class="py-2 px-4 border-b-2 font-medium text-sm" data-flyon-tab="#tab2">
+                            Tab 2
+                        </button>
+                        <button class="py-2 px-4 border-b-2 font-medium text-sm" data-flyon-tab="#tab3">
+                            Tab 3
+                        </button>
+                    </nav>
+                </div>
+                <div class="py-4">
+                    <div id="tab1" class="hidden">
+                        <h3 class="text-lg font-medium mb-2">Tab 1 Content</h3>
+                        <p>This is the content for the first tab. FlyonUI tabs allow you to organize content into different sections that can be accessed without navigating to a different page.</p>
+                    </div>
+                    <div id="tab2" class="hidden">
+                        <h3 class="text-lg font-medium mb-2">Tab 2 Content</h3>
+                        <p>This is the content for the second tab. You can include any type of content within tabs, including text, images, forms, and other components.</p>
+                    </div>
+                    <div id="tab3" class="hidden">
+                        <h3 class="text-lg font-medium mb-2">Tab 3 Content</h3>
+                        <p>This is the content for the third tab. Tabs are a great way to save space and organize related content in a user-friendly way.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

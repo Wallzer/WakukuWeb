@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Control Panel</title>
+    <link rel="icon" href="https://pujayana.com/cv/favicon.ico">
+
+    <!-- Import Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Import CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwindcss -->
+    <style type="text/tailwindcss">
+        @layer base{
+            body{
+                @apply font-inter font-normal text-black;
+            }
+        }
+    </style>
+
+    <!-- Tailwindcss -->
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    inter: ['Inter'],
+                },
+                extend: {
+                    transitionDuration: {
+                        DEFAULT: '200ms',
+                    },
+                }
+            },
+        }
+    </script>
+    <script>
+  const image = document.getElementById('previewImage');
+  const fileInput = document.getElementById('fileInput');
+
+  image.addEventListener('click', () => {
+    fileInput.click();
+  });
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = (e) => {
+        image.src = e.target.result; // Обновляем изображение
+      };
+
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+</head>
+
+<body>
+
+    <!-- Pop-Up 1 -->
+    <div class="fixed inset-0 collapse z-50 w-full">
+        <input type="checkbox" id="pop-up-1" class="peer appearance-none collapse opacity-0">
+        <label for="pop-up-1" class="cursor-pointer px-10 invisible absolute inset-0 w-full flex items-center justify-center overflow-hidden opacity-0 transition-all peer-checked:visible peer-checked:opacity-100 peer-checked:[&>*]:scale-100 z-10"></label>
+        <div class="absolute bg-slate-800 bg-opacity-60 px-10 inset-0 w-full flex justify-center items-center invisible opacity-0 peer-checked:visible peer-checked:opacity-100 peer-checked:[&>*]:scale-100 transition-all">
+            <div class="relative z-40 max-h-[calc(100vh-5em)] w-full max-w-screen-lg cursor-auto overflow-y-auto rounded-sm bg-white py-10 px-10 md:px-14 scale-90 transition-all">
+                <!-- Button close pop-up -->
+                <label for="pop-up-1" class="group absolute top-5 right-5 cursor-pointer w-auto transition-all">
+                    <svg class="h-4 w-auto group-hover:opacity-50 transition-all" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 45L45 3" stroke="#1E293B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M45 45L3 3" stroke="#1E293B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+                <div class="w-full">
+
+
+
+
+
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+
+
+        <img class="rounded-t-lg" onclick="" src="../static/images/imageplaceholder.jpg"/></a<img id="previewImage" class="rounded-t-lg" src="../static/images/imageplaceholder.jpg" alt="Click to choose image" />
+
+        <input type="file" id="fileInput" accept="image/*" />>
+    </div>
+</div>
+
+                    <!-- Put the content here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="min-h-screen w-full flex justify-center items-center flex-col py-16">
+        <div class="w-full max-w-screen-lg px-10">
+            <h1 class="text-slate-800 text-center text-3xl mb-14">Pop-Up in Tailwindcss</h1>
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-16 border border-slate-200 flex justify-center items-center rounded-sm">
+                    <label for="pop-up-1" class="px-8 py-4 rounded-sm bg-blue-500 text-white text-base whitespace-nowrap cursor-pointer hover:bg-opacity-70 transition-all">Pop-Up 1</label>
+                </div>
+            </div>
+            <h2 class="text-slate-800 text-center text-xl mt-14">Created with ♥︎ by <a href="https://pujayana.com" class="hover:text-blue-500 transition-all">Pujayana</a></h2>
+        </div>
+    </section>
+
+</body>
+
+</html>
