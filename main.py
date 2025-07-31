@@ -1,21 +1,25 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Depends, HTTPException, status, Cookie, APIRouter
+from fastapi.responses import HTMLResponse,RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from sqlalchemy.sql.functions import current_user
+from sqlalchemy.orm import Session
 app = FastAPI()
-
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/src", StaticFiles(directory="src"), name="src")
 
-@app.get("/")
+#pages_gets
+@app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
-    return templates.TemplateResponse("main.html", {"request": request})
+   return templates.TemplateResponse("index.html", {"request": request})
 
 
-#some admin controls here
-@app.get("/admin")
-async def admin(request: Request):
-    return templates.TemplateResponse("admin.html", {"request": request})
-@app.get("/admin/control")
-async def control(request: Request):
-    return templates.TemplateResponse("control.html", {"request": request})
+@app.get("/shop")
+async def shop(request: Request):
+    return templates.TemplateResponse("shop.html", {"request": request})
+
+@app.get("/sale")
+async def sale(request: Request):
+    return templates.TemplateResponse("sale.html", {"request": request})
 
